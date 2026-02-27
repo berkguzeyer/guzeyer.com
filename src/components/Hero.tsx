@@ -112,7 +112,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mx-auto mb-12 max-w-xl text-lg leading-relaxed text-text-secondary"
+          className="mb-12 text-center text-lg leading-relaxed text-text-secondary"
         >
           I build polished, high-performance frontend products that users love.
           Obsessed with pixel-perfect UI, buttery animations, and scalable component architectures.
