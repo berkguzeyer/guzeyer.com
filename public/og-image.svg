@@ -1,0 +1,69 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#030014"/>
+      <stop offset="100%" style="stop-color:#0a0a1a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="50%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Glow orbs -->
+  <circle cx="200" cy="150" r="250" fill="#6366f1" opacity="0.08"/>
+  <circle cx="1050" cy="500" r="200" fill="#8b5cf6" opacity="0.08"/>
+  <circle cx="700" cy="300" r="150" fill="#06b6d4" opacity="0.05"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.04" stroke="white" stroke-width="1">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="150" y1="0" x2="150" y2="630"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="450" y1="0" x2="450" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="750" y1="0" x2="750" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="1050" y1="0" x2="1050" y2="630"/>
+  </g>
+
+  <!-- Gradient line accent -->
+  <rect x="100" y="310" width="400" height="2" fill="url(#accent)" opacity="0.6"/>
+
+  <!-- Name -->
+  <text x="100" y="230" font-family="system-ui, -apple-system, sans-serif" font-size="80" font-weight="700" fill="white" letter-spacing="-2">Berk Guzeyer</text>
+
+  <!-- Role -->
+  <text x="104" y="290" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="400" fill="#94a3b8">Senior Software Engineer &amp; AI Ambassador</text>
+
+  <!-- Tagline -->
+  <text x="100" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="#475569">Building polished frontend products at JP Morgan Chase</text>
+
+  <!-- Tech pills -->
+  <g font-family="monospace" font-size="16" fill="#6366f1">
+    <text x="100" y="430">React</text>
+    <text x="175" y="430" fill="#475569">·</text>
+    <text x="190" y="430">TypeScript</text>
+    <text x="305" y="430" fill="#475569">·</text>
+    <text x="320" y="430">Next.js</text>
+    <text x="400" y="430" fill="#475569">·</text>
+    <text x="415" y="430">Tailwind CSS</text>
+    <text x="545" y="430" fill="#475569">·</text>
+    <text x="560" y="430">Framer Motion</text>
+  </g>
+
+  <!-- Domain -->
+  <text x="100" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="500" fill="url(#accent)">guzeyer.com</text>
+</svg>
