@@ -1,73 +1,56 @@
-# React + TypeScript + Vite
+# guzeyer.com — Personal Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal website, built with a focus on performance, fluid animations, and pixel-perfect design.
 
-Currently, two official plugins are available:
+**Live at [guzeyer.com](https://guzeyer.com)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Technology | Purpose |
+|---|---|
+| React 19 + TypeScript | UI & type safety |
+| Vite | Build tooling |
+| Tailwind CSS v4 | Styling |
+| Framer Motion | Animations & transitions |
+| Jotai | Global state |
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Typewriter effect** — cycling through roles in the hero
+- **Scroll-triggered animations** — sections animate in as you scroll
+- **Animated skill bars** — progress bars with per-skill colors and glow
+- **Neural network visualization** — animated SVG in the AI section
+- **Particle field** — canvas-based background animation
+- **Scroll progress bar** — top-of-page reading indicator
+- **Magnetic buttons** — subtle 3D hover effect on CTAs
+- **Lazy-loaded sections** — code-split with React Suspense for fast initial load
+- **CSS Modules** — component-scoped styles alongside Tailwind
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Running locally
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Deployment
+
+Deployed on [Vercel](https://vercel.com). Every push to `master` triggers an automatic production deployment.
+
+---
+
+## Author
+
+**Berk Guzeyer** — Senior Software Engineer & AI Ambassador at JPMorgan Chase
+
+[LinkedIn](https://www.linkedin.com/in/berkguzeyer/) · [GitHub](https://github.com/berkguzeyer)
