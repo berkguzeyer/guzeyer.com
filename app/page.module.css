@@ -1,0 +1,214 @@
+/* Top bar */
+.topBar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+}
+
+.topBarLeft {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.topBarNav {
+  display: flex;
+  gap: 24px;
+}
+
+.topBarClock {
+  color: var(--muted);
+}
+
+/* Hero grid */
+.heroGrid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 280px 1fr 280px;
+  min-height: 720px;
+  border-bottom: 1px solid var(--line);
+}
+
+.heroLeft {
+  border-right: 1px solid var(--line);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.heroCenter {
+  position: relative;
+  border-right: 1px solid var(--line);
+}
+
+.heroRight {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Hero headline */
+.heroHeadline {
+  font-size: 72px;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  margin-top: 12px;
+}
+
+/* Marquee */
+.marquee {
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  padding: 18px 0;
+  white-space: nowrap;
+}
+
+.marqueeInner {
+  display: inline-block;
+  animation: dossier-slide 40s linear infinite;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Contact */
+.contactGrid {
+  padding: 48px 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.contactHeadline {
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-top: 8px;
+}
+
+.contactLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+/* Colophon */
+.colophon {
+  padding: 18px 32px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* Metrics grid on mobile */
+.metricsGrid {
+  display: contents;
+}
+
+/* ===================== MOBILE ===================== */
+@media (max-width: 900px) {
+  .topBar {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .topBarLeft {
+    gap: 16px;
+  }
+
+  .topBarNav {
+    gap: 16px;
+  }
+
+  .topBarClock {
+    display: none;
+  }
+
+  /* Collapse hero to single column */
+  .heroGrid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .heroLeft {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding: 24px 16px;
+    gap: 16px;
+  }
+
+  .heroCenter {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    min-height: 400px;
+  }
+
+  .heroRight {
+    padding: 24px 16px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .heroHeadline {
+    font-size: 40px;
+  }
+
+  /* Metrics as 2x2 grid on mobile */
+  .metricsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .marqueeInner {
+    font-size: 24px;
+  }
+
+  /* Contact stacks vertically */
+  .contactGrid {
+    grid-template-columns: 1fr;
+    padding: 32px 16px;
+    gap: 32px;
+  }
+
+  .contactHeadline {
+    font-size: 36px;
+  }
+
+  .colophon {
+    padding: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topBarNav {
+    gap: 12px;
+    font-size: 10px;
+  }
+
+  .heroHeadline {
+    font-size: 32px;
+  }
+
+  .contactHeadline {
+    font-size: 28px;
+  }
+
+  .marqueeInner {
+    font-size: 20px;
+  }
+}

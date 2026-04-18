@@ -8,6 +8,14 @@ export default function CustomCursor({ accent = "#c6ff3d" }: { accent?: string }
   const stateRef = useRef({ x: 0, y: 0, tx: 0, ty: 0, hover: false });
 
   useEffect(() => {
+    // Skip custom cursor on touch devices
+    const isTouch = window.matchMedia("(hover: none)").matches;
+    if (isTouch) {
+      if (cursorRef.current) cursorRef.current.style.display = "none";
+      if (dotRef.current) dotRef.current.style.display = "none";
+      return;
+    }
+
     const prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;

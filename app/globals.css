@@ -45,3 +45,10 @@ button {
     animation: none !important;
   }
 }
+
+/* Restore native cursor on touch devices */
+@media (hover: none), (pointer: coarse) {
+  html, body, button, a {
+    cursor: auto !important;
+  }
+}

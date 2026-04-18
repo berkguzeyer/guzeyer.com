@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import CustomCursor from "@/components/CustomCursor";
 import Magnetic from "@/components/Magnetic";
+import styles from "./page.module.css";
 
 const DossierTorus = dynamic(() => import("@/components/DossierTorus"), {
   ssr: false,
@@ -118,26 +119,12 @@ export default function Home() {
   return (
     <>
       {/* Top bar */}
-      <header
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 5,
-          background: ui.bg,
-          borderBottom: `1px solid ${ui.line}`,
-          padding: "14px 32px",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          fontSize: 11,
-          fontFamily: mono,
-        }}
-      >
-        <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
+      <header className={styles.topBar} style={{ fontFamily: mono }}>
+        <div className={styles.topBarLeft}>
           <div style={{ color: ui.accent, letterSpacing: "0.3em" }}>BG//</div>
           <Label>v2026.04</Label>
         </div>
-        <nav style={{ display: "flex", gap: 24 }}>
+        <nav className={styles.topBarNav}>
           {NAV_LINKS.map((l) => (
             <a
               key={l}
@@ -155,29 +142,15 @@ export default function Home() {
             </a>
           ))}
         </nav>
-        <div style={{ color: ui.muted, fontFamily: mono }}>{time}</div>
+        <div className={styles.topBarClock} style={{ fontFamily: mono }}>
+          {time}
+        </div>
       </header>
 
       {/* Hero grid */}
-      <section
-        style={{
-          position: "relative",
-          display: "grid",
-          gridTemplateColumns: "280px 1fr 280px",
-          minHeight: 720,
-          borderBottom: `1px solid ${ui.line}`,
-        }}
-      >
+      <section className={styles.heroGrid}>
         {/* Left column — identity */}
-        <div
-          style={{
-            borderRight: `1px solid ${ui.line}`,
-            padding: "32px 24px",
-            display: "flex",
-            flexDirection: "column",
-            gap: 24,
-          }}
-        >
+        <div className={styles.heroLeft}>
           <div>
             <Label>SUBJECT_ID</Label>
             <div
@@ -239,7 +212,7 @@ export default function Home() {
         </div>
 
         {/* Center column — 3D */}
-        <div style={{ position: "relative", borderRight: `1px solid ${ui.line}` }}>
+        <div className={styles.heroCenter}>
           <DossierTorus />
 
           {/* Corner brackets */}
@@ -285,13 +258,10 @@ export default function Home() {
           >
             <Label>INTERFACE_ARCHITECT // 2018→2026</Label>
             <div
+              className={styles.heroHeadline}
               style={{
                 fontFamily: display,
                 fontWeight: 800,
-                fontSize: 72,
-                lineHeight: 0.92,
-                letterSpacing: "-0.04em",
-                marginTop: 12,
               }}
             >
               BUILDING
@@ -304,39 +274,34 @@ export default function Home() {
         </div>
 
         {/* Right column — telemetry */}
-        <div
-          style={{
-            padding: "32px 24px",
-            display: "flex",
-            flexDirection: "column",
-            gap: 20,
-          }}
-        >
+        <div className={styles.heroRight}>
           <Label>TELEMETRY</Label>
-          {METRICS.map(([k, v]) => (
-            <div key={k}>
-              <div
-                style={{
-                  fontSize: 10,
-                  color: ui.muted,
-                  letterSpacing: "0.15em",
-                  fontFamily: mono,
-                }}
-              >
-                {k}
+          <div className={styles.metricsGrid}>
+            {METRICS.map(([k, v]) => (
+              <div key={k}>
+                <div
+                  style={{
+                    fontSize: 10,
+                    color: ui.muted,
+                    letterSpacing: "0.15em",
+                    fontFamily: mono,
+                  }}
+                >
+                  {k}
+                </div>
+                <div
+                  style={{
+                    fontFamily: display,
+                    fontSize: 32,
+                    fontWeight: 700,
+                    marginTop: 2,
+                  }}
+                >
+                  {v}
+                </div>
               </div>
-              <div
-                style={{
-                  fontFamily: display,
-                  fontSize: 32,
-                  fontWeight: 700,
-                  marginTop: 2,
-                }}
-              >
-                {v}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
           <div
             style={{
               marginTop: "auto",
@@ -371,25 +336,10 @@ export default function Home() {
       </section>
 
       {/* Marquee */}
-      <div
-        id="stack"
-        style={{
-          borderBottom: `1px solid ${ui.line}`,
-          overflow: "hidden",
-          padding: "18px 0",
-          whiteSpace: "nowrap",
-        }}
-      >
+      <div id="stack" className={styles.marquee}>
         <div
-          className="marquee-inner"
-          style={{
-            display: "inline-block",
-            animation: "dossier-slide 40s linear infinite",
-            fontFamily: display,
-            fontSize: 36,
-            fontWeight: 800,
-            letterSpacing: "-0.02em",
-          }}
+          className={`marquee-inner ${styles.marqueeInner}`}
+          style={{ fontFamily: display }}
         >
           {Array(3)
             .fill(0)
@@ -407,27 +357,10 @@ export default function Home() {
       </div>
 
       {/* Contact footer */}
-      <section
-        id="contact"
-        style={{
-          padding: "48px 32px",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 48,
-        }}
-      >
+      <section id="contact" className={styles.contactGrid}>
         <div>
           <Label>TRANSMIT</Label>
-          <div
-            style={{
-              fontFamily: display,
-              fontSize: 56,
-              fontWeight: 800,
-              letterSpacing: "-0.03em",
-              lineHeight: 1,
-              marginTop: 8,
-            }}
-          >
+          <div className={styles.contactHeadline} style={{ fontFamily: display }}>
             LET&apos;S
             <br />
             BUILD
@@ -435,14 +368,7 @@ export default function Home() {
             <span style={{ color: ui.accent }}>SOMETHING.</span>
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: 12,
-            paddingTop: 8,
-          }}
-        >
+        <div className={styles.contactLinks}>
           {CONTACT_LINKS.map(({ label, value, href }) => (
             <a
               data-cursor="1"
@@ -477,17 +403,7 @@ export default function Home() {
       </section>
 
       {/* Colophon */}
-      <footer
-        style={{
-          padding: "18px 32px",
-          borderTop: `1px solid ${ui.line}`,
-          display: "flex",
-          justifyContent: "space-between",
-          fontSize: 10,
-          color: ui.muted,
-          fontFamily: mono,
-        }}
-      >
+      <footer className={styles.colophon} style={{ fontFamily: mono }}>
         <span>© 2026 B.GUZEYER</span>
         <span>COMPILED: APR_17_2026</span>
         <span>EOF.</span>
